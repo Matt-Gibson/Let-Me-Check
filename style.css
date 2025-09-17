@@ -1,13 +1,24 @@
 *{
+    margin: 0px;
+    padding: 0px;
+    border: solid black 2px;
+}
+
+.page{
 
 }
 
 .main{
+ 
+}
+ 
+.header{
+
 
 }
 
 .main_1{
-
+    
 }
 
 .main_2{
@@ -15,7 +26,7 @@
 }
 
 .button{
-
+    
 }
 
 .print_button{
@@ -23,5 +34,5 @@
 }
 
 .footer{
-    
+
 }
