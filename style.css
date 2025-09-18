@@ -39,6 +39,7 @@ body{
 .main_2{
     width: 80%;
     border: solid red 1px;
+    border-left:solid black 2px;
 }
 
 .button{
