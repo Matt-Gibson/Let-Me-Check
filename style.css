@@ -117,3 +117,13 @@ body{
     justify-content: flex-end; 
     align-items: center;  
 }
+
+/* Used for pop up */
+#pop{
+    display: none;
+    background-color: chartreuse;
+    position:fixed;
+    z-index: 1;
+    height: 100px;
+    width: 100px;
+}
