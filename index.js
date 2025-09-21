@@ -1,7 +1,7 @@
   function openPopUp(){
-          document.getElementById("pop").style.display = "flex";
+          document.getElementById("popUpContainer").style.display = "flex";
         }
 
   function closePopUp(){
-          document.getElementById("pop").style.display = "none";
+          document.getElementById("popUpContainer").style.display = "none";
         }

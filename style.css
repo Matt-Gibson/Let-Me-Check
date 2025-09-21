@@ -111,17 +111,17 @@ body{
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
 
-.footer{
+.footer {
     height:10%;
     display:flex;
     justify-content: flex-end; 
     align-items: center;  
 }
 
-/* Used for pop up */
-#pop{
+
+#popUpContainer {
     display:none;
-    background-color: chartreuse;
+    background-color: rgb(161, 239, 226);
     position:absolute;
     top:1px;
     justify-content: center;
@@ -131,10 +131,21 @@ body{
     width: 100%;
 }
 
+#popUpForm {
+   border: black solid 2px;
+   border-radius:24px;
+   padding:20px;
+
+}
+
+input {
+  
+}
+
 input[type="text"] {
-  max-width:12ch;
+  max-width:8ch;
 } 
 
 input[type="number"] {
-  max-width: 6ch;
+  max-width: 5ch;
 }

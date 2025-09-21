@@ -17,7 +17,7 @@
         <div class="main_1">
           <button class="button">View All</button>
           <button class="button">Filter</button>
-          <button class="button" , onclick="openPopUp()">Add</button>
+          <button class="button" onclick="openPopUp()">Add</button>
           <button class="button">Delete</button>
         </div>
         <div class="main_2">Viewing Area</div>
@@ -27,15 +27,15 @@
       </footer>
     </main>
    
-    <div id="pop">
-      <form action="">
+    <div id="popUpContainer">
+      <form id="popUpForm" action="">
          <label for="category">Category</label>
         <select name="category" id="category" required>
           <option value="Scratch and Dent">Scratch and Dent</option>
           <option value="Second Hand">Second Hand</option>
           <option value="Ran Wrong">Ran Wrong</option>
           <option selected></option>
-        </Select>
+        </Select> <br>
         <label for="color">Color</label>
         <select name="color" id="color" required>
           <option selected></option>
@@ -63,12 +63,11 @@
           <option value="SS Gray">SS Gray</option>
           <option value="Crinkle Charcoal">Crinkle Charcoal</option>
           <option value="Crinkle Black">Crinkle Black</option>
-        </select>
-        <br>
+        </select> <br>
         <label for="qty">Qty</label>
-        <input type="number" name="qty" id="qty" required>
+        <input type="number" name="qty" id="qty" required> <br>
         <label for="length">Length</label>
-        <input type="text" name="length" id="length" placeholder="i.e. 5' 5" required>
+        <input type="text" name="length" id="length" placeholder="i.e. 5' 5" required> <br>
         <label for="price">Original Price</label>
         <input type="text" name="price" id="price" placeholder="i.e. 2.95" required>
         <br>
