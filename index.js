@@ -1,3 +1,7 @@
-  function addRecord(){
-          document.getElementById("pop").style.display = "block";
+  function openPopUp(){
+          document.getElementById("pop").style.display = "flex";
+        }
+
+  function closePopUp(){
+          document.getElementById("pop").style.display = "none";
         }

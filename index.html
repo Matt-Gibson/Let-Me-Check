@@ -17,7 +17,7 @@
         <div class="main_1">
           <button class="button">View All</button>
           <button class="button">Filter</button>
-          <button class="button" , onclick="addRecord()">Add</button>
+          <button class="button" , onclick="openPopUp()">Add</button>
           <button class="button">Delete</button>
         </div>
         <div class="main_2">Viewing Area</div>
@@ -26,11 +26,56 @@
         <button class="button">Print</button>
       </footer>
     </main>
-
+   
     <div id="pop">
-      <form></form>
+      <form>
+         <label for="category">Category</label>
+        <Select name="category" id="category" required>
+          <option value="Scratch and Dent">Scratch and Dent</option>
+          <option value="Second Hand">Second Hand</option>
+          <option value="Ran Wrong">Ran Wrong</option>
+        </Select>
+        <label for="color">Color</label>
+        <select name="color" id="color" required>
+          <option value="Bright Red">Bright Red</option>
+          <option value="Barn Red">Barn Red</option>
+          <option value="Dark Red">Dark Red</option>
+          <option value="Gallery Blue">Gallery Blue</option>
+          <option value="Sapphire Blue">Sapphire Blue</option>
+          <option value="Hawaiian Blue">Hawaiian Blue</option>
+          <option value="White">White</option>
+          <option value="Black">Black</option>
+          <option value="Brown">Brown</option>
+          <option value="Burnished Slate">Burnished Slate</option>
+          <option value="Gray">Gray</option>
+          <option value="Charcoal">Charcoal</option>
+          <option value="Green">Green</option>
+          <option value="Plum">Plum</option>
+          <option value="Lightstone">Lightstone</option>
+          <option value="Tan">Tan</option>
+          <option value="Buckskin">Buckskin</option>
+          <option value="Clay">Clay</option>
+          <option value="Galvalume">Galvalume</option>
+          <option value="Copper Penny">Copper Penny</option>
+          <option value="SS Black">SS Black</option>
+          <option value="SS Gray">SS Gray</option>
+          <option value="Crinkle Charcoal">Crinkle Charcoal</option>
+          <option value="Crinkle Black">Crinkle Black</option>
+        </select>
+        <br>
+        <label for="qty">Qty</label>
+        <input type="number" name="qty" id="qty" required>
+        <label for="length">Length</label>
+        <input name="length" id="length" required>
+        <label for="price">Original Price</label>
+        <input name="price" id="price" required>
+        <br>
+        <!--Unsure if href goes here or in form tag-->
+        <input type="submit" value="ADD">
+        <button onclick="closePopUp()">CANCEL</button>
+      </form>
     </div>
-
+    
     <script src="index.js"></script>
   </body>
 </html>
