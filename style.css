@@ -130,3 +130,11 @@ body{
     height: 100%;
     width: 100%;
 }
+
+input[type="text"] {
+  max-width:12ch;
+} 
+
+input[type="number"] {
+  max-width: 6ch;
+}

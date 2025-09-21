@@ -28,15 +28,17 @@
     </main>
    
     <div id="pop">
-      <form>
+      <form action="">
          <label for="category">Category</label>
-        <Select name="category" id="category" required>
+        <select name="category" id="category" required>
           <option value="Scratch and Dent">Scratch and Dent</option>
           <option value="Second Hand">Second Hand</option>
           <option value="Ran Wrong">Ran Wrong</option>
+          <option selected></option>
         </Select>
         <label for="color">Color</label>
         <select name="color" id="color" required>
+          <option selected></option>
           <option value="Bright Red">Bright Red</option>
           <option value="Barn Red">Barn Red</option>
           <option value="Dark Red">Dark Red</option>
@@ -66,11 +68,10 @@
         <label for="qty">Qty</label>
         <input type="number" name="qty" id="qty" required>
         <label for="length">Length</label>
-        <input name="length" id="length" required>
+        <input type="text" name="length" id="length" placeholder="i.e. 5' 5" required>
         <label for="price">Original Price</label>
-        <input name="price" id="price" required>
+        <input type="text" name="price" id="price" placeholder="i.e. 2.95" required>
         <br>
-        <!--Unsure if href goes here or in form tag-->
         <input type="submit" value="ADD">
         <button onclick="closePopUp()">CANCEL</button>
       </form>
