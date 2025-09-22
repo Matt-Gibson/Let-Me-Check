@@ -29,15 +29,18 @@
    
     <div id="popUpContainer">
       <form id="popUpForm" action="">
-         <label for="category">Category</label>
-        <select name="category" id="category" required>
+        <div>
+          <label for="category">Category</label>
+          <select name="category" id="category" required>
           <option value="Scratch and Dent">Scratch and Dent</option>
           <option value="Second Hand">Second Hand</option>
           <option value="Ran Wrong">Ran Wrong</option>
           <option selected></option>
-        </Select> <br>
-        <label for="color">Color</label>
-        <select name="color" id="color" required>
+          </Select> 
+        </div>
+        <div>
+          <label for="color">Color</label>
+          <select name="color" id="color" required>
           <option selected></option>
           <option value="Bright Red">Bright Red</option>
           <option value="Barn Red">Barn Red</option>
@@ -63,15 +66,22 @@
           <option value="SS Gray">SS Gray</option>
           <option value="Crinkle Charcoal">Crinkle Charcoal</option>
           <option value="Crinkle Black">Crinkle Black</option>
-        </select> <br>
-        <label for="qty">Qty</label>
-        <input type="number" name="qty" id="qty" required> <br>
-        <label for="length">Length</label>
-        <input type="text" name="length" id="length" placeholder="i.e. 5' 5" required> <br>
-        <label for="price">Original Price</label>
-        <input type="text" name="price" id="price" placeholder="i.e. 2.95" required>
+          </select>
+        </div>
+        <div>
+          <label for="qty">Qty</label>
+          <input type="number" name="qty" id="qty" required>
+        </div>
+        <div>
+          <label for="length">Length</label>
+          <input type="text" name="length" id="length" placeholder="i.e. 5' 5" required>
+        </div>
+        <div>
+          <label for="price">Regular Price</label>
+          <input type="number" name="price" id="price" placeholder="i.e. 2.95" required>
+        </div>
         <br>
-        <input type="submit" value="ADD">
+        <input type="submit" value="ADD" form="popUpForm">
         <button onclick="closePopUp()">CANCEL</button>
       </form>
     </div>

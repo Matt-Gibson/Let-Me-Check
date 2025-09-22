@@ -135,17 +135,24 @@ body{
    border: black solid 2px;
    border-radius:24px;
    padding:20px;
-
+   display:flex;
+   flex-direction: column;
 }
 
-input {
-  
+select, input {
+  float: right;
 }
 
-input[type="text"] {
-  max-width:8ch;
-} 
+input[text], input[number] {
+  text-align: right;
+}
 
-input[type="number"] {
-  max-width: 5ch;
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+  appearance: none;
+  margin: 0;
+}
+
+input::placeholder {
+  text-align: right;
 }
