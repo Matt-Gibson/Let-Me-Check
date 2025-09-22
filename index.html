@@ -29,18 +29,18 @@
    
     <div id="popUpContainer">
       <form id="popUpForm" action="">
-        <div>
+        <div class="inputWrapper">
           <label for="category">Category</label>
-          <select name="category" id="category" required>
+          <select name="category" id="category" class="addFormField" required>
           <option value="Scratch and Dent">Scratch and Dent</option>
           <option value="Second Hand">Second Hand</option>
           <option value="Ran Wrong">Ran Wrong</option>
           <option selected></option>
           </Select> 
         </div>
-        <div>
+        <div class="inputWrapper">
           <label for="color">Color</label>
-          <select name="color" id="color" required>
+          <select name="color" id="color" class="addFormField" required>
           <option selected></option>
           <option value="Bright Red">Bright Red</option>
           <option value="Barn Red">Barn Red</option>
@@ -68,22 +68,24 @@
           <option value="Crinkle Black">Crinkle Black</option>
           </select>
         </div>
-        <div>
+        <div class="inputWrapper">
           <label for="qty">Qty</label>
-          <input type="number" name="qty" id="qty" required>
+          <input type="number" name="qty" id="qty" class="addFormField" required>
         </div>
-        <div>
+        <div class="inputWrapper">
           <label for="length">Length</label>
-          <input type="text" name="length" id="length" placeholder="i.e. 5' 5" required>
+          <input type="text" name="length" id="length" placeholder="i.e. 5' 5" class="addFormField" required>
         </div>
-        <div>
+        <div class="inputWrapper">
           <label for="price">Regular Price</label>
-          <input type="number" name="price" id="price" placeholder="i.e. 2.95" required>
+          <input type="number" name="price" id="price" placeholder="i.e. 2.95" class="addFormField" required>
         </div>
         <br>
-        <input type="submit" value="ADD" form="popUpForm">
-        <button onclick="closePopUp()">CANCEL</button>
-      </form>
+        <div class="addFormButtonsWrapper">
+          <input id="addButton" type="submit" value="ADD" form="popUpForm">
+          <button id="cancelButton" onclick="closePopUp()">CANCEL</button>
+        </div>
+        </form>
     </div>
     
     <script src="index.js"></script>

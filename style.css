@@ -136,15 +136,7 @@ body{
    border-radius:24px;
    padding:20px;
    display:flex;
-   flex-direction: column;
-}
-
-select, input {
-  float: right;
-}
-
-input[text], input[number] {
-  text-align: right;
+   flex-direction:column;
 }
 
 input::-webkit-inner-spin-button,
@@ -155,4 +147,41 @@ input::-webkit-outer-spin-button{
 
 input::placeholder {
   text-align: right;
+}
+
+.addFormField {
+  background: none;
+  border: none;
+  text-align:right;
+  text-align-last:right;
+  float: right;
+  appearance: none;
+}
+
+.inputWrapper {
+  border:black solid 2px;
+  border-radius: 5px;
+  padding:5px;
+  margin-bottom: 5px;
+}
+
+.addFormButtonsWrapper {
+  display:flex;
+  justify-content:space-evenly;
+}
+
+#addButton {
+  width:30%;
+  padding: 10px;
+  border:black solid 2px;
+  border-radius: 10px;
+  background:none;
+}
+
+#cancelButton {
+  width:30%;
+  padding:10px;
+  border:black solid 2px;
+  border-radius:10px;
+  background:none;
 }
