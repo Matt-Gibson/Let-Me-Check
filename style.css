@@ -155,6 +155,7 @@ input::placeholder {
   text-align:right;
   text-align-last:right;
   float: right;
+  outline: none;
   appearance: none;
 }
 
