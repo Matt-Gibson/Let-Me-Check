@@ -1,7 +1,7 @@
-  function openPopUp(){
-          document.getElementById("popUpContainer").style.display = "flex";
-        }
+function openPopUp() {
+  document.getElementById("popUpContainer").classList.add("active");
+}
 
-  function closePopUp(){
-          document.getElementById("popUpContainer").style.display = "none";
-        }
+function closePopUp() {
+  document.getElementById("popUpContainer").classList.remove("active");
+}

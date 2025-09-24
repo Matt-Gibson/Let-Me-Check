@@ -1,77 +1,93 @@
-*{
-    margin: 0px;
-    padding: 0px;
-  }
 
-body{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #121212;
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.page{
-    display:flex;
-    position:absolute;
-    top:10px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 90%;
-    width: 90%;
-    padding:20px;
-    background-color: #2f2e2e;
-    border: #444444 solid 2px;
-    border-radius:24px;
-    box-shadow: 0px 0px 5px #888888 inset;
+/* BODY */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #121212;
+  font-family: sans-serif;
+  color: #e0e0e0;
 }
 
-.main{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
-}
- 
-header{
-    height:20%;
-    text-align: center;
-    color:#E0E0E0;
-}
-
-.main_1{
-    display:flex;
-    flex-direction: column;
-    width:20%;
-    justify-content: space-evenly;
+/* MAIN PAGE WRAPPER */
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #2f2e2e;
+  border: 1px solid #444;
+  border-radius: 24px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.6) inset;
 }
 
-.main_2{
-    width: 70%;
-    border: #444444 solid 2px;
-    border-radius: 10px;
-    background-color:#262525;
-    box-shadow: 0px 0px 5px #888888, 0px 0px 10px #888888 inset;
-    padding: 10px;
-    color:rgb(171, 178, 171);
+/* HEADER */
+header {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #e0e0e0;
 }
 
-.button{
-  padding:10px;
-  border: #444444 solid 2px;
-  border-radius:10px;
-  background:none;
-  color:#E0E0E0;
-  box-shadow: 1px 1px 2px #888888;
-  
+/* MAIN LAYOUT */
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  gap: 20px;
+  flex: 1;
+}
+
+/* LEFT PANEL (BUTTONS) */
+.main_1 {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  justify-content: space-evenly;
+  gap: 12px;
+}
+
+/* VIEWING WINDOW */
+.main_2 {
+  width: 70%;
+  border-radius: 12px;
+  background-color: #1e1e1e;
+  box-shadow: 
+    0 0 10px rgba(0,0,0,0.6),
+    inset 0 0 8px rgba(255,255,255,0.05);
+  padding: 16px;
+  color: #cfcfcf;
+  line-height: 1.5;
+}
+
+/* BUTTONS */
+.button {
+  padding: 10px 14px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  color: #e0e0e0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
 }
 
 .button:hover {
-  background: #E0E0E0;
-  color: #121212;
-  box-shadow: 2px 2px 3px #888888;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  box-shadow: 0 0 8px rgba(255,255,255,0.3);
 }
 
 .button:focus {
@@ -79,70 +95,172 @@ header{
   border: 2px solid #4285f4;
 }
 
+/* FOOTER */
 .footer {
-    height:10%;
-    display:flex;
-    justify-content: flex-end; 
-    align-items: center;
-    width:100%;  
+  margin-top: 20px;
+  height: 10%;
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  width: 100%;  
 }
 
-
+/* POPUP BACKDROP */
 #popUpContainer {
-    display:none;
-    background-color: #121212;
-    position:absolute;
-    top:1px;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+
+  /* start hidden */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
+/* Show popup when active */
+#popUpContainer.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* POPUP FORM */
 #popUpForm {
-   background-color: #2f2e2e;
-   border: #444444 solid 2px;
-   border-radius:24px;
-   padding:20px;
-   display:flex;
-   flex-direction:column;
-   box-shadow: 0px 0px 5px #888888 inset;
+  background-color: #2a2a2a;
+  border: 1px solid #555;
+  border-radius: 16px;
+  padding: 24px;
+  min-width: 300px;
+  max-width: 90%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  /* animation setup */
+  transform: scale(0.9);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* Animate form in when active */
+#popUpContainer.active #popUpForm {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* FORM INPUTS */
+.addFormField {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #555;
+  color: #ddd;
+  padding: 6px;
+  width: 100%;
+  transition: border-color 0.2s ease;
+  text-align: right;
+}
+
+.addFormField:focus {
+  border-color: #4285f4;
+  outline: none;
+  color: #fff;
+}
+
+/* REMOVE SPINNERS FROM NUMBER INPUTS */
 input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button{
+input::-webkit-outer-spin-button {
   appearance: none;
   margin: 0;
 }
 
-input::placeholder {
-  text-align: right;
-}
-
-.addFormField {
-  background: none;
-  border: none;
-  text-align:right;
-  text-align-last:right;
-  float: right;
-  outline: none;
-  appearance: none;
-  color:#B0B0B0;
-}
-
-.inputWrapper {
-  border-bottom:#888888 solid 2px;
-  border-bottom-left-radius:5px;
-  padding:5px;
-  margin-bottom:5px;
-}
-
-.addFormButtonsWrapper {
-  display:flex;
-  justify-content:space-evenly;
-}
-
+/* LABELS */
 .label {
-  color:#E0E0E0;
+  color: #e0e0e0;
+  font-size: 0.9rem;
 }
+
+/* INPUT WRAPPER */
+.inputWrapper {
+  padding: 5px;
+  margin-bottom: 8px;
+}
+
+/* BUTTON WRAPPER INSIDE POPUP */
+.addFormButtonsWrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+
+/* ---------------------------------- */
+/* RESPONSIVE DESIGN                  */
+/* ---------------------------------- */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .main_1 {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .main_2 {
+    width: 100%;
+  }
+
+  .button {
+    flex: 1 1 45%;
+    min-width: 100px;
+    text-align: center;
+  }
+
+  #popUpForm {
+    width: 95%;
+    max-width: 400px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    flex: 1 1 100%;
+    min-width: auto;
+  }
+
+  #popUpForm {
+    width: 90%;
+    padding: 12px;
+  }
+}
+
+/* Base text – clean and easy to read */
+body, .main_2, form, input, textarea {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+}
+
+/* Headers and buttons – bold and modern */
+h1, h2, h3, .button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Extra bold option for main titles */
+h1 {
+  font-weight: 800;
+}
+
