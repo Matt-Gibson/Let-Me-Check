@@ -17,9 +17,9 @@
       <div class="main">
         <div class="main_1">
           <button class="button">View All</button>
-          <button class="button">Filter</button>
-          <button class="button" onclick="openPopUp()">Add</button>
-          <button class="button">Delete</button>
+          <button class="button" onclick="openPopUp()">Color Filter</button>
+          <button class="button" onclick="openPopUp('add')">Add</button>
+          <button class="button" onclick="openPopUp()">Delete</button>
         </div>
         <div class="main_2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt alias itaque fugit quam, numquam modi recusandae libero veritatis beatae commodi est voluptatem quo? Quos, libero? Possimus animi ratione natus ullam!</div>
       </div>
@@ -27,11 +27,11 @@
       </footer>
     </main>
    
-    <div id="popUpContainer">
-      <form id="popUpForm" action="">
+    <div id="add" class="popUpContainer">
+      <form id="addForm" class="popUpForm" action="">
         <div class="inputWrapper">
           <label for="category" class="label">Category</label>
-          <select name="category" id="category" class="addFormField" required>
+          <select name="category" id="category" class="formField" required>
           <option value="Scratch and Dent">Scratch and Dent</option>
           <option value="Second Hand">Second Hand</option>
           <option value="Ran Wrong">Ran Wrong</option>
@@ -40,7 +40,7 @@
         </div>
         <div class="inputWrapper">
           <label for="color" class="label">Color</label>
-          <select name="color" id="color" class="addFormField" required>
+          <select name="color" id="color" class="formField" required>
           <option selected></option>
           <option value="Bright Red">Bright Red</option>
           <option value="Barn Red">Barn Red</option>
@@ -71,20 +71,20 @@
         </div>
         <div class="inputWrapper">
           <label for="qty" class="label">Qty</label>
-          <input type="number" name="qty" id="qty" class="addFormField" required>
+          <input type="number" name="qty" id="qty" class="formField" required>
         </div>
         <div class="inputWrapper">
           <label for="length" class="label">Length</label>
-          <input type="text" name="length" id="length" class="addFormField" required>
+          <input type="text" name="length" id="length" class="formField" required>
         </div>
         <div class="inputWrapper">
           <label for="price" class="label">Regular Price</label>
-          <input type="number" name="price" id="price" class="addFormField" required>
+          <input type="number" name="price" id="price" class="formField" required>
         </div>
         <br>
-        <div class="addFormButtonsWrapper">
-          <input class="button" type="submit" value="ADD" form="popUpForm">
-          <button class="button" onclick="closePopUp()">CANCEL</button>
+        <div class="formButtonsWrapper">
+          <input class="button" type="submit" value="ADD" form="addForm">
+          <button class="button" onclick="closePopUp('add')">CANCEL</button>
         </div>
         </form>
     </div>

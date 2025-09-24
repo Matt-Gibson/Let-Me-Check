@@ -1,7 +1,7 @@
-function openPopUp() {
-  document.getElementById("popUpContainer").classList.add("active");
+function openPopUp(id) {
+  document.getElementById(id).classList.add("active");
 }
 
-function closePopUp() {
-  document.getElementById("popUpContainer").classList.remove("active");
+function closePopUp(id) {
+  document.getElementById(id).classList.remove("active");
 }

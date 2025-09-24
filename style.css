@@ -106,7 +106,7 @@ header {
 }
 
 /* POPUP BACKDROP */
-#popUpContainer {
+.popUpContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,13 +124,13 @@ header {
 }
 
 /* Show popup when active */
-#popUpContainer.active {
+.popUpContainer.active {
   opacity: 1;
   visibility: visible;
 }
 
 /* POPUP FORM */
-#popUpForm {
+.popUpForm {
   background-color: #2a2a2a;
   border: 1px solid #555;
   border-radius: 16px;
@@ -149,13 +149,13 @@ header {
 }
 
 /* Animate form in when active */
-#popUpContainer.active #popUpForm {
+.popUpContainer.active .popUpForm {
   transform: scale(1);
   opacity: 1;
 }
 
 /* FORM INPUTS */
-.addFormField {
+.formField {
   background: transparent;
   border: none;
   border-bottom: 1px solid #555;
@@ -166,7 +166,7 @@ header {
   text-align: right;
 }
 
-.addFormField:focus {
+.formField:focus {
   border-color: #4285f4;
   outline: none;
   color: #fff;
@@ -192,7 +192,7 @@ input::-webkit-outer-spin-button {
 }
 
 /* BUTTON WRAPPER INSIDE POPUP */
-.addFormButtonsWrapper {
+.formButtonsWrapper {
   display: flex;
   justify-content: space-evenly;
   margin-top: 10px;
@@ -225,7 +225,7 @@ input::-webkit-outer-spin-button {
     text-align: center;
   }
 
-  #popUpForm {
+  .popUpForm {
     width: 95%;
     max-width: 400px;
     padding: 16px;
@@ -238,7 +238,7 @@ input::-webkit-outer-spin-button {
     min-width: auto;
   }
 
-  #popUpForm {
+  .popUpForm {
     width: 90%;
     padding: 12px;
   }
