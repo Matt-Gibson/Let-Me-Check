@@ -264,3 +264,12 @@ h1 {
   font-weight: 800;
 }
 
+/* Material card for displaying items */
+
+.material-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
