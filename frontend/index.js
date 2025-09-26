@@ -33,6 +33,13 @@ function renderMaterials(materials) {
   document.getElementById("resultWindow").innerHTML = html;
 }
 
+// Load all helper
+async function loadAllMaterials() {
+  const response = await fetch("http://127.0.0.1:8000/api/list/");
+  const result = await response.json();
+  renderMaterials(result);
+}
+
 // Add
 document.getElementById("addForm").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -74,8 +81,7 @@ document.getElementById("filterForm").addEventListener("submit", async (e) => {
 });
 
 // View All
-document.getElementById("viewButton").addEventListener("click", async () => {
-  const response = await fetch("http://127.0.0.1:8000/api/list/");
-  const result = await response.json();
-  renderMaterials(result);
-});
+document.getElementById("viewButton").addEventListener("click", loadAllMaterials);
+
+// Auto-load on first page load
+document.addEventListener("DOMContentLoaded", loadAllMaterials);
