@@ -36,6 +36,9 @@ function renderMaterials(materials) {
 // Add
 document.getElementById("addForm").addEventListener("submit", async (e) => {
   e.preventDefault();
+  /** @type {HTMLFormElement} */
+  const form = e.target;
+
   const data = {
     category: document.getElementById("category").value,
     color: document.getElementById("color").value,
@@ -52,17 +55,21 @@ document.getElementById("addForm").addEventListener("submit", async (e) => {
 
   const result = await response.json();
   renderMaterials(result);
+  form.reset();
   closePopUp("add");
 });
 
 // Filter
 document.getElementById("filterForm").addEventListener("submit", async (e) => {
   e.preventDefault();
+/** @type {HTMLFormElement} */
+  const form = e.target;
   const color = document.getElementById("filterColor").value;
 
   const response = await fetch(`http://127.0.0.1:8000/api/filter/${color}/`);
   const result = await response.json();
   renderMaterials(result);
+  form.reset();
   closePopUp("filter");
 });
 

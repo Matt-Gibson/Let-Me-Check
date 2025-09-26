@@ -25,6 +25,7 @@ body {
   align-items: center;
   width: 90%;
   max-width: 1200px;
+  max-height: 600px;
   margin: 20px auto;
   padding: 20px;
   background-color: #2f2e2e;
@@ -70,6 +71,8 @@ header {
   padding: 16px;
   color: #cfcfcf;
   line-height: 1.5;
+  max-height: 500px;
+  overflow-y: auto;
 }
 
 /* BUTTONS */
