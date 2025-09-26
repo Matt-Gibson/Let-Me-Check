@@ -34,11 +34,21 @@ function renderMaterials(materials) {
   document.getElementById("resultWindow").innerHTML = html;
 
     // Attach delete listeners
+  let deleteTargetId = null;
+
   document.querySelectorAll(".delete-button").forEach((btn) => {
-    btn.addEventListener("click", async () => {
-      const id = btn.getAttribute("data-id");
-      await deleteMaterial(id);
+    btn.addEventListener("click", () => {
+      deleteTargetId = btn.getAttribute("data-id");
+      openPopUp("deleteConfirm");
     });
+  });
+
+  document.getElementById("confirmDelete").addEventListener("click", async () => {
+    if (deleteTargetId) {
+      await deleteMaterial(deleteTargetId);
+      deleteTargetId = null;
+      closePopUp("deleteConfirm");
+    }
   });
 }
 
