@@ -19,18 +19,27 @@ function renderMaterials(materials) {
     const html = materials
     .map(
       (item) => `
-        <div class="material-card">
+        <div class="material-card" data-id="${item.id}">
           <p><strong>Category:</strong> ${item.category}</p>
           <p><strong>Color:</strong> ${item.color}</p>
           <p><strong>Quantity:</strong> ${item.qty}</p>
           <p><strong>Length:</strong> ${item.length}</p>
           <p><strong>Price:</strong> $${item.price}</p>
+          <button class="delete-button" data-id="${item.id}">Delete</button>
         </div>
       `
     )
     .join("");
 
   document.getElementById("resultWindow").innerHTML = html;
+
+    // Attach delete listeners
+  document.querySelectorAll(".delete-button").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const id = btn.getAttribute("data-id");
+      await deleteMaterial(id);
+    });
+  });
 }
 
 // Load all helper
@@ -85,3 +94,17 @@ document.getElementById("viewButton").addEventListener("click", loadAllMaterials
 
 // Auto-load on first page load
 document.addEventListener("DOMContentLoaded", loadAllMaterials);
+
+// Delete
+async function deleteMaterial(id) {
+  const response = await fetch(`http://127.0.0.1:8000/api/delete/${id}/`, {
+    method: "DELETE",
+  });
+
+  const result = await response.json();
+  if (result.success) {
+    loadAllMaterials(); // reload updated list
+  } else {
+    alert("Delete failed: " + result.error);
+  }
+}
