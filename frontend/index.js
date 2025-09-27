@@ -26,6 +26,7 @@ function renderMaterials(materials) {
           <p><strong>Length:</strong> ${item.length}</p>
           <p><strong>Price:</strong> $${item.price}</p>
           <button class="delete-button" data-id="${item.id}">Delete</button>
+          <button class="update-button" data-id="${item.id}">Update</button>
         </div>
       `
     )
